@@ -1,6 +1,7 @@
 # TASK MANAGEMENT API
 
-Brief description or introduction of your application.
+RESTful Task Management API, that allows users to manage
+tasks, created using Flask, SQLAlchemy, and PostgreSQL.
 
 ## Table of Contents
 
@@ -26,7 +27,7 @@ Brief description or introduction of your application.
 
     ```
     # Using venv module
-    python3 -m venv venv
+    python -m venv venv
 
     # Activate virtual environment
     source venv/bin/activate
@@ -80,25 +81,29 @@ Brief description or introduction of your application.
         );
         ```
 
-    - Edit `config.py` to configure your database URI. Replace `postgresql://username:password@localhost/database_name` with your PostgreSQL URI:
+    - Edit `config.py` to configure database URI. Replace `SQLALCHEMY_DATABASE_URI` with your PostgreSQL URI.
 
-        ```python
-        SQLALCHEMY_DATABASE_URI = 'postgresql://username:password@localhost/your_database_name'
-        ```
 
 ## Usage
 
 1. **Run the application:**
 
     ```
-    python app.py
+    python main.py
     ```
 
 2. **Access the application:**
 
-    Open a web browser and go to `http://localhost:5000` (or the appropriate address/port if configured differently).
+    Open a web browser and go to `http://localhost:5000` 
 
-3. **API Endpoints:**
+3. **Testing with Postman:**
+
+    - Launch Postman and create a new request.
+    - Set the request type (GET, POST, PUT, DELETE) and enter the appropriate URL (e.g., `http://localhost:5000/tasks`).
+    - Add any necessary headers or request body parameters.
+    - Send the request to interact with the application's API endpoints.
+
+4. **API Endpoints:**
 
     - `GET /tasks`: Get all tasks.
     - `POST /tasks`: Create a new task.
@@ -106,30 +111,3 @@ Brief description or introduction of your application.
     - `PUT /tasks/<task_id>`: Update a specific task.
     - `DELETE /tasks/<task_id>`: Delete a specific task.
     - `GET /tasks/category/<category_name>`: Get tasks by category.
-
-## Configuration
-
-You may need to configure certain settings before running the application. This can include database configurations, environment variables, or any other settings specific to your application.
-
-1. **Database Configuration:**
-
-    - Edit `config.py` to configure your database URI.
-
-2. **Environment Variables:**
-
-    - You can use environment variables to store sensitive information or configuration settings. Refer to the documentation for details on which variables to set and their values.
-
-## Contributing
-
-If you'd like to contribute to the project, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes.
-4. Commit your changes (`git commit -am 'Add new feature'`).
-5. Push to the branch (`git push origin feature-branch`).
-6. Create a new pull request.
-
-## License
-
-Include license information for your project here.

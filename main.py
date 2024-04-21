@@ -1,14 +1,13 @@
 from flask import Flask
 from models import db
 from routes import tasks_bp
+from config import Config
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:592001@localhost:5432/flask_db'
+app.config.from_object(Config)
 
-# Initialize the database
 db.init_app(app)
 
-# Register routes
 app.register_blueprint(tasks_bp)
 
 if __name__ == '__main__':
